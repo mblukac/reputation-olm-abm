@@ -4,7 +4,7 @@
 
 *Department of Methodology, London School of Economics and Political Science*
 
-[André Grow](http://andre-grow.net)
+[André Grow](https://www.andre-grow.net)
 
 *Laboratory of Digital and Computational Demography, Max Planck Institute for Demographic Research*
 
