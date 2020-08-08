@@ -1,10 +1,10 @@
 # Reputation systems and recruitment in online labor markets: insights from an agent-based model
 
-Martin Lukac 
+[Martin Lukac](https://mblukac.github.io)
 
 *Department of Methodology, London School of Economics and Political Science*
 
-André Grow
+[André Grow](http://andre-grow.net)
 
 *Laboratory of Digital and Computational Demography, Max Planck Institute for Demographic Research*
 
