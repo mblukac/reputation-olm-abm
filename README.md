@@ -17,5 +17,5 @@ Online labour markets—freelance marketplaces, where digital labor is distribut
 **Keywords** :  reputation systems, online labor markets, inequality, agent-based modeling, economic sociology, gig economy
 
 # Reproduction Files
-* NetLogo: 
-* R:
+* NetLogo: LukacGrow_JCSS_NetLogoModel.nlogo
+* R: to be added
