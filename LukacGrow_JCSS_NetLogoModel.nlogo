@@ -602,8 +602,8 @@ end
 GRAPHICS-WINDOW
 427
 15
-864
-453
+744
+333
 -1
 -1
 9.364
@@ -1242,13 +1242,12 @@ Debugging toolkit
 @#$#@#$#@
 ## WHAT IS IT?
 
-This is an agent-based model of recruiting mechanisms on online labour markets. It is inspired by online labour market platforms such as Upwork or Freelancer.com.
+This is an agent-based model of recruiting mechanisms on online labour markets used in
+the following research paper
+
+Lukac, M. and Grow, A. (2020). Reputation systems and recruitment in online labor markets: insights from an agent-based model. *Journal of Computational Social Science*. Online First. [Download paper here](https://link.springer.com/epdf/10.1007/s42001-020-00072-x?sharing_token=tMO5y1XihT3jhqXHTEIEMfe4RwlQNchNByi7wbcMAY4DqitSn5ErRM0-e06aggmGUMd5ZAkBDkjLzmLjQjAO3bvcj3XY88Uayg7Aqhu2CJn3K3qc0pehoBIuuUIJqjhIE95gr2fuJ2QUxb-zybXupeASFp78qYd8L6r2I1lspq0%3D)
 
 **Research question:** Can structural conditions of the recruitment mechanism produce inequal and segmented outcomes on online labour markets?
-
-**Hypothesis 1:** *Visibility of reputation metric and open auction bids create competitive dynamics between freelancers that polarizes the outcomes.*
-
-Such competition leads to winner-takes-it-all outcomes: freelancers with lower reputation can only compete with highly reputable freelancers only via severly underbidding on jobs with low complexity, which are usually associated with low rewards. Moreover, highly talented freelancers, yet with lower reputation, are forced to underbid to obtain initial reputation on the platform to be actually able to compete for more complex jobs (and higher rewards).
 
 
 ## HOW IT WORKS
@@ -1269,9 +1268,6 @@ Other bidders make their bids sequentially, taking into consideration all the pr
 *Logic 1:* If REPUTATION is high, bid slightly higher than the average of bids of freelancers with similar REPUTATION.
 *Logic 2:* If REPUTATION is low, bid lower than the average of bids of freelancers with similar REPUTATION
 
-**(Note: show empirical evidence for the positive correlation between REPUTATION and BID -- webscrape jobs)**
-
-
 ### Step 3. (procedure evaluate)
 Probability of being selected is calculated -- this depends on the COMPLEXITY of the job. For low COMPLEXITY jobs, the REPUTATION of the freelancer is not very important as anyone can perform simple tasks and the BID is more decisive (e.g. think data collection tasks, copy-paste, simple clicking tasks). For high COMPLEXITY jobs, the REPUTATION of the freelancer is crucial, due to the need being sure that the freelancer is skilled enough and trustworthy to perform more complex work (e.g. think programming, data analysis, etc.)
 
@@ -1280,9 +1276,6 @@ Majority of jobs are, however, in between (COMPLEXITY ~ 50), so the mixing of pr
 > COEF-STRATEGY => as a slider, deciding the steepness
 >
 > P(strategy | complexity) ~ exp(coef-strategy * (complexity - 50)) / (1 + exp(coef-strategy * (complexity - 50)))
-
-The weight distribution looks like this:
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Normal_Distribution_CDF.svg/320px-Normal_Distribution_CDF.svg.png)
 
 The higher the COMPLEXITY, the more you take REPUTATION into account. At COMPLEXITY = 50, the probability of selection is given equally by REPUTATION and BID.
 
@@ -1297,12 +1290,7 @@ Increase NR-JOBS-RECEIVED (+1) for the winning candidate.
 Create a link between winning EMPLOYEE and the EMPLOYER. If there is a link, increase link's WEIGHT (+1). 
 
 
-
-### Step 6. (procedure job-feedback)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-**This is a relatively missing link and I am still considering whether this is a necessary addition to the model.**
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-### Step 7. (procedure set-reputation)
+### Step 6. (procedure set-reputation)
 Recalculate REPUTATION
 > reputation ~ ( coef-feedback * feedback ) + (coef-nr-jobs * nr-jobs-received )
 
@@ -1312,36 +1300,6 @@ In general, I don't think they will matter too much, but I will test it.
 
 ### Step 8. (procedure clean-job-apps)
 General clean-up of previous job (JOBS [ die ]), its job's application-links, and resetting job selection variables (EMPLOYEE-PARTNER, EMPLOYER-PARTNER, WINNER, BID, PROB-SELECT)
-
-
-
-## HOW TO USE IT
-
-(how to use the model, including a description of each of the items in the Interface tab)
-
-## THINGS TO NOTICE
-
-(suggested things for the user to notice while running the model)
-
-## THINGS TO TRY
-
-(suggested things for the user to try to do (move sliders, switches, etc.) with the model)
-
-## EXTENDING THE MODEL
-
-(suggested things to add or change in the Code tab to make the model more complicated, detailed, accurate, etc.)
-
-## NETLOGO FEATURES
-
-(interesting or unusual features of NetLogo that the model uses, particularly in the Code tab; or where workarounds were needed for missing features)
-
-## RELATED MODELS
-
-(models in the NetLogo Models Library and elsewhere which are of related interest)
-
-## CREDITS AND REFERENCES
-
-(a reference to the model's URL on the web if it has one, as well as any other necessary credits, citations, and links)
 @#$#@#$#@
 default
 true
