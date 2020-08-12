@@ -1,4 +1,4 @@
-# Reputation systems and recruitment in online labor markets: insights from an agent-based model [replication materials]
+# Reputation systems and recruitment in online labor markets: insights from an agent-based model
 
 [Martin Lukac](https://mblukac.github.io)
 
